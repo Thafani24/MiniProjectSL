@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Of Indian Ocean</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- navigating -->
+    <nav>
+        <h1>Pearl Of Indian Ocean</h1>
+        <div class="navigation">
+            <ul>
+                <li><a  href="index.html">Home</a></li>
+                <li><a href="places.html">Destinations</a></li>
+                <li><a class="active" href="ToDo.html">To-Do list</a></li>
+                <li><a href="Explore.html">Explore</a></li>
+                <li><a href="maps.html">Maps</a></li>
+                <li><a href="about.html">About us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HOME -->
+    <section id="ToDo-Home"></section> 
+    <section>    
+    <div id="thaff">
+        
+        <h2 style="color: rgb(205, 96, 255); font-size: 2rem;">To-Do!</h2>
+        <br>
+        <div class="container">
+            <input type="text" placeholder="New Task" :style="{'background-color':color}" v-model="task" @keyup.enter="addTask">
+            <button @click="addTask"><i class="fa fa-pencil fa-fw"></i></button>
+
+        </div>
+
+        <br><br><br>
+
+        <ul class="listOfTasks">
+            <li v-for="(t,index) in tasklist" :key="index" >
+            {{t}}
+            <button><i @click="removeTask(index)" class="fa fa-trash fa-fw"></i></button></li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- js source -->
+    <script src="todo.js"></script>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-col">
+            <h3>Contact </h3>
+            <h4>Headquarters</h4>
+                <p>85/2,Lake rd,Kandy</p>
+                <h4>Phone</h4>
+                <p>0812345678</p>
+                <h4>E-mail</h4>
+                <p><a href="mailto:SLtour@gmail.com">SLtour@gmail.com</a></p>
+            
+        </div>
+        <div class="footer-col">
+            <h3>General Facts</h3>
+            <ul>
+                <li>Capital: Colombo (commercial)</li>
+                <li>Language: Sinhala|Tamil|English</li>
+                <li>Currency: Sri Lankan rupee (LKR)</li>
+                <li>Time zone: UTC+5:30</li>
+            </ul>
+            
+        </div>
+       
+        <div class="footer-col">
+            <h3>Checkout these Blogs</h3>
+            <li><a href="https://nerdnomads.com/sri-lanka">Journey Through Sri Lanka</a></li>
+            <li><a href="https://nerdnomads.com/getting-around-sri-lanka">Getting around Sri-Lanka</a></li>
+            <li> <a href="https://nerdnomads.com/bentota-sri-lanka"> Beach Bliss, Jungle Boat in SL</a></li>
+            <li><a href="https://nerdnomads.com/nuwara-eliya">The Heart Of British Ceylon </a></li>
+            <li><a href="https://nerdnomads.com/sri-lanka-itinerary">Sri Lanka Itinerary</a></li>
+        </div>
+        
+        <div class="copyright">
+            <p>
+                Copyright ©2022 All rights reserved by Thaf </p>
+        </div>
+    </footer>
+</body>
+</html>
